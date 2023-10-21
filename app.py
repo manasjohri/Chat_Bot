@@ -11,7 +11,6 @@ from langchain.vectorstores.base import VectorStoreRetriever
 from langchain.memory import ConversationBufferWindowMemory
 from langchain.chains import ConversationalRetrievalChain
 import streamlit as st
-import config
 import os
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = st.secrets['api_key'] # ENTER HUGGING FACE API CODE
 
