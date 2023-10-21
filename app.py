@@ -12,7 +12,7 @@ from langchain.memory import ConversationBufferWindowMemory
 from langchain.chains import ConversationalRetrievalChain
 import streamlit as st
 import os
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = st.secrets['api_key'] # ENTER HUGGING FACE API CODE
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = st.secrets["api_key"] # ENTER HUGGING FACE API CODE
 
 # function to parse PDFs
 @st.cache_resource
