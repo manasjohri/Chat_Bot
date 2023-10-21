@@ -1,0 +1,10 @@
+sentence-transformers
+unstructured
+pdf2image
+pdfminer
+transformers
+langchain
+pdfminer.six
+faiss-cpu
+ipywidgets
+streamlit
