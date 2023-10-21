@@ -20,7 +20,6 @@ def parse_pdf(file):
     '''
         Loading the pdf file.
     '''
-    # Use your code here
     loader = UnstructuredPDFLoader(file)
 
     documents = loader.load()
@@ -40,7 +39,6 @@ def embed_text(_documents):
     embeddings = HuggingFaceEmbeddings()
     
     faiss = FAISS.from_documents(split_text, embeddings)
-    # Your code here
     return faiss
 
 @st.cache_data
@@ -48,7 +46,6 @@ def create_buffer_memory():
     '''
         Create conversation buffer window memory which save the last *k=2* chats.
     '''
-    # Your code here
     
     memory = ConversationBufferWindowMemory(k=2, memory_key="chat_history", return_messages=True)
     
@@ -58,7 +55,6 @@ def create_llm():
     ''' 
         Get LLM from HuggingFaceHub, Use model: "google/flan-t5-xxl"
     '''
-    # Your code here
     # Getting LLM from HuggingFaceHub
     llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature":1, "max_length":1000})
     
@@ -68,7 +64,6 @@ def get_answer(llm, retriever, memory, query):
     '''
         Create a conversational chain and get answer
     '''
-    # Your code here
     conversation_chain = ConversationalRetrievalChain.from_llm(llm=llm,
                                                            retriever=faiss.as_retriever(),
                                                            memory=memory,
@@ -82,13 +77,11 @@ uploaded_file = "us_en_faqs.pdf"
 
 if uploaded_file is not None:
     document = parse_pdf(uploaded_file)
-    faiss = embed_text(document)# YOUR CODE HERE
-    retriever = faiss.as_retriever()# YOUR CODE HERE
-    memory = create_buffer_memory()# YOUR CODE HERE
-    llm = create_llm()# YOUR CODE HERE
+    faiss = embed_text(document)
+    retriever = faiss.as_retriever()
+    memory = create_buffer_memory()
+    llm = create_llm()
     query = st.text_area("Ask Aramex FAQ Bot")
     button = st.button("Submit")
     if button:
         st.write(get_answer(llm, retriever, memory, query))
-    
-# Run this code with the following command: streamlit run app.py
