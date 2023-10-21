@@ -78,7 +78,7 @@ def get_answer(llm, retriever, memory, query):
     return answer
 
 st.header("FAQ QnA")
-uploaded_file = "Document/us_en_faqs.pdf"
+uploaded_file = "us_en_faqs.pdf"
 
 if uploaded_file is not None:
     document = parse_pdf(uploaded_file)
