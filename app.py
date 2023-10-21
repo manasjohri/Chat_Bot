@@ -11,8 +11,9 @@ from langchain.vectorstores.base import VectorStoreRetriever
 from langchain.memory import ConversationBufferWindowMemory
 from langchain.chains import ConversationalRetrievalChain
 import streamlit as st
+import config
 import os
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = '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' # ENTER HUGGING FACE API CODE
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = config.api_key # ENTER HUGGING FACE API CODE
 
 # function to parse PDFs
 @st.cache_resource
