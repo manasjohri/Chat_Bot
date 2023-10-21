@@ -1,6 +1,3 @@
-# Refer to this link:
-# reference: https://dev.to/mmz001/build-a-document-qa-app-in-3-simple-steps-with-langchain-and-streamlit-g08#:~:text=Build%20a%20Document%20QA%20App%20in%203%20Simple,won%27t%20affect%20any%20of%20your%20existing%20projects.%20
-
 from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter
 from langchain import HuggingFaceHub
 from langchain.chains.question_answering import load_qa_chain
