@@ -1,5 +1,6 @@
 sentence-transformers
 unstructured
+unstructured-inference
 pdf2image
 pdfminer
 transformers
